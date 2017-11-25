@@ -1,26 +1,34 @@
 export default [
   {
-      path: '/about/',
-      component: require('./pages/about.vue')
-  },
-  {
-      path: '/form/',
-      component: require('./pages/form.vue')
-  },
-  {
-      path: '/dynamic-route/blog/:blogId/post/:postId/',
-      component: require('./pages/dynamic-route.vue')
-  },
-  {
       path: '/quiz/',
-      component: require('./pages/quiz.vue')
+      component: require('./pages/quiz/quiz.vue')
   },
   {
       path: '/quiz/completed/',
-      component: require('./pages/quiz_completed.vue')
+      component: require('./pages/quiz/completed.vue')
   },
   {
-      path: '/sign-up/',
-      component: require('./pages/sign_up.vue')
+      path: '/sign-up/form/',
+      component: require('./pages/sign_up/form.vue')
+  },
+  {
+      path: '/sign-up/user-type/',
+      component: require('./pages/sign_up/user_type.vue')
+  },
+  {
+      path: '/sign-up/completed/',
+      component: require('./pages/sign_up/completed.vue')
+  },
+  {
+      path: '/contact/job_seeker/',
+      component: require('./pages/contact/job_seeker.vue')
+  },
+  {
+      path: '/contact/company/',
+      component: require('./pages/contact/company.vue')
+  },
+  {
+      path: '/matchings/',
+      component: require('./pages/matchings.vue')
   }
 ]

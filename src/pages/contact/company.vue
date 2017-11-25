@@ -1,7 +1,7 @@
 <template>
   <f7-page>
+    <f7-navbar title="Company Contacts" back-link="Back" sliding></f7-navbar>
     <f7-block>
-      <p>Thank you!</p>
     </f7-block>
   </f7-page>
 </template>

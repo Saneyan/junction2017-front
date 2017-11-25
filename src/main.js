@@ -36,10 +36,25 @@ new Vue({
     root: '#app',
     /* Uncomment to enable Material theme: */
     material: true,
-    routes: Routes,
+    routes: Routes
   },
   // Register App Component
   components: {
     app: App
   }
+});
+
+// Before opening main view, check if a user has logged into the app.
+// If not, open login screen. Otherwise continue to initialize main view.
+if (localStorage.getItem('session') === null) {
+  window.f7.loginScreen();
+} else if (false) {
+  window.f7.mainView.router.load({
+    url: '/sign-up/user-type/'
+  });
+}
+
+window.Dom7(document).on('app:logout', function () {
+  localStorage.removeItem('session');
+  window.f7.loginScreen();
 });
