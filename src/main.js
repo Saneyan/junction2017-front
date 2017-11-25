@@ -56,5 +56,6 @@ if (localStorage.getItem('session') === null) {
 
 window.Dom7(document).on('app:logout', function () {
   localStorage.removeItem('session');
+  window.f7.closePanel();
   window.f7.loginScreen();
 });
