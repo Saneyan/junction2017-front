@@ -13,7 +13,7 @@
           <f7-page>
             <f7-navbar v-if="$theme.material" title="Left Panel" sliding></f7-navbar>
             <f7-block inner>
-              <p>Left panel content goes here</p>
+              <a href="#" class="open-login-screen">Login</a>
             </f7-block>
             <f7-block-title>Load page in main view</f7-block-title>
             <f7-list>
@@ -33,7 +33,7 @@
           <f7-nav-left>
             <f7-link icon="icon-bars" open-panel="left"></f7-link>
           </f7-nav-left>
-          <f7-nav-center sliding>Framework7</f7-nav-center>
+          <f7-nav-center sliding>Live 'n Tokyo</f7-nav-center>
         </f7-navbar>
         <!-- Pages -->
         <f7-pages>
@@ -43,7 +43,7 @@
               <f7-nav-left>
                 <f7-link icon="icon-bars" open-panel="left"></f7-link>
               </f7-nav-left>
-              <f7-nav-center sliding>Framework7</f7-nav-center>
+              <f7-nav-center sliding>Live 'n Tokyo</f7-nav-center>
             </f7-navbar>
             <!-- Page Content -->
 
@@ -92,23 +92,14 @@
       <f7-view>
         <f7-pages>
           <f7-page login-screen>
-            <f7-login-screen-title>Login</f7-login-screen-title>
-            <f7-list form>
-              <f7-list-item>
-                <f7-label>Username</f7-label>
-                <f7-input name="username" placeholder="Username" type="text"></f7-input>
-              </f7-list-item>
-              <f7-list-item>
-                <f7-label>Password</f7-label>
-                <f7-input name="password" type="password" placeholder="Password"></f7-input>
-              </f7-list-item>
-            </f7-list>
-            <f7-list>
-              <f7-list-button title="Sign In" close-login-screen></f7-list-button>
-              <f7-list-label>
-                <p>Click Sign In to close Login Screen</p>
-              </f7-list-label>
-            </f7-list>
+            <f7-login-screen-title>Live 'n Tokyo</f7-login-screen-title>
+            <f7-block inner>
+              <f7-button
+                fill
+                round
+                big
+                @click="onLoginButtonClick">Login with Facebook</f7-button>
+            </f7-block>
           </f7-page>
         </f7-pages>
       </f7-view>
@@ -157,6 +148,9 @@ export default {
       },
       onNameClick: function () {
         console.log('name-click');
+      },
+      onLoginButtonClick: function () {
+        console.log('hello');
       },
       onSubmit: function (text, clear) {
         if (text.trim().length === 0) return;
