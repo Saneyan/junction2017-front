@@ -1,5 +1,9 @@
 export default [
   {
+      path: '/dashboard/',
+      component: require('./pages/dashboard.vue')
+  },
+  {
       path: '/quiz/',
       component: require('./pages/quiz/quiz.vue')
   },
