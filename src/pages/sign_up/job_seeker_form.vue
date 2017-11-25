@@ -20,10 +20,6 @@
         <f7-input type="text" placeholder="Nation Currently Stay"></f7-input>
       </f7-list-item>
       <f7-list-item>
-        <f7-label>Name of Company</f7-label>
-        <f7-input type="text" placeholder="Name of Company"></f7-input>
-      </f7-list-item>
-      <f7-list-item>
         <f7-button fill round big @click="signUp">Sign up</f7-button>
       </f7-list-item>
     </f7-list>

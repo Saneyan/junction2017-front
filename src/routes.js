@@ -8,8 +8,12 @@ export default [
       component: require('./pages/quiz/completed.vue')
   },
   {
-      path: '/sign-up/form/',
-      component: require('./pages/sign_up/form.vue')
+      path: '/sign-up/job-seeker-form/',
+      component: require('./pages/sign_up/job_seeker_form.vue')
+  },
+  {
+      path: '/sign-up/employer-form/',
+      component: require('./pages/sign_up/employer_form.vue')
   },
   {
       path: '/sign-up/user-type/',
