@@ -18,5 +18,9 @@ export default [
   {
       path: '/quiz/completed/',
       component: require('./pages/quiz_completed.vue')
+  },
+  {
+      path: '/sign-up/',
+      component: require('./pages/sign_up.vue')
   }
 ]

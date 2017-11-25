@@ -20,6 +20,7 @@
               <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/quiz/" title="Quiz" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/sign-up/" title="Sign Up" link-view="#main-view" link-close-panel></f7-list-item>
             </f7-list>
           </f7-page>
         </f7-pages>
