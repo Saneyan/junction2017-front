@@ -19,6 +19,7 @@
             <f7-list>
               <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/quiz/" title="Quiz" link-view="#main-view" link-close-panel></f7-list-item>
             </f7-list>
           </f7-page>
         </f7-pages>
@@ -94,10 +95,7 @@
           <f7-page login-screen>
             <f7-login-screen-title>Live 'n Tokyo</f7-login-screen-title>
             <f7-block inner>
-              <f7-button
-                fill
-                round
-                big
+              <f7-button fill round big
                 @click="onLoginButtonClick">Login with Facebook</f7-button>
             </f7-block>
           </f7-page>

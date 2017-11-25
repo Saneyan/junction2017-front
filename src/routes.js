@@ -10,5 +10,13 @@ export default [
   {
       path: '/dynamic-route/blog/:blogId/post/:postId/',
       component: require('./pages/dynamic-route.vue')
+  },
+  {
+      path: '/quiz/',
+      component: require('./pages/quiz.vue')
+  },
+  {
+      path: '/quiz/completed/',
+      component: require('./pages/quiz_completed.vue')
   }
 ]

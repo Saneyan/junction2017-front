@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "question": "How important of salary?",
+  "options": [{
+    "id": 1,
+    "content": "YES"
+  }, {
+    "id": 2,
+    "content": "NO"
+  }],
+  "next": true
+}
