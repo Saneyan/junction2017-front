@@ -1,5 +1,13 @@
 export default [
   {
+      path: '/message/',
+      component: require('./pages/message.vue')
+  },
+  {
+      path: '/contract/',
+      component: require('./pages/contact/contract.vue')
+  },
+  {
       path: '/dashboard/',
       component: require('./pages/dashboard.vue')
   },
