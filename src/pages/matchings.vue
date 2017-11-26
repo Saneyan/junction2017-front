@@ -4,7 +4,7 @@
     <f7-card v-for="matching in matchings">
       <f7-card-header class="company-cover"><img :src="matching.image" /></f7-card-header>
       <f7-card-footer>
-        <f7-button>Go to interview</f7-button>
+        <f7-button @click="goToInterview">Go to interview</f7-button>
       </f7-card-footer>
     </f7-card>
   </f7-page>
@@ -21,6 +21,14 @@ export default {
           image: require('../../preworkfi.png')
         }
       ]
+    }
+  },
+
+  methods: {
+    goToInterview: function () {
+      this.$router.load({
+        url: '/interview/'
+      });
     }
   }
 }

@@ -1,5 +1,9 @@
 export default [
   {
+      path: '/interview/',
+      component: require('./pages/interview.vue')
+  },
+  {
       path: '/message/',
       component: require('./pages/message.vue')
   },
