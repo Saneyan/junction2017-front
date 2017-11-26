@@ -18,7 +18,7 @@ export default {
       matchings: [
         {
           name_of_company: 'Helsinki Hearth',
-          image: require('../../../preworkfi.png')
+          image: require('../../../helsinki_hearth.png')
         }
       ]
     }

@@ -19,8 +19,8 @@ export default {
     return {
       contacts: [
         {
-          "name_of_company": "Helsinki Hearth",
-          "image": require('../../../preworkfi.png')
+          name_of_company: "Helsinki Hearth",
+          image: require('../../../helsinki_hearth.png')
         }
       ]
     }
