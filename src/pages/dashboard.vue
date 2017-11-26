@@ -39,7 +39,8 @@
 export default {
   data: function () {
     return {
-      account: this.$select('account')
+      account: this.$select('account'),
+      companyImage: require('../../helsinki_hearth.png')
     };
   },
 

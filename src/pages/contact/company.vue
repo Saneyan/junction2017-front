@@ -21,6 +21,18 @@ export default {
         {
           name_of_company: "Helsinki Hearth",
           image: require('../../../helsinki_hearth.png')
+        },
+        {
+          name_of_company: 'Nokia',
+          image: 'https://s3-ap-northeast-1.amazonaws.com/prework.fi/static/img/nokia.jpg'
+        },
+        {
+          name_of_company: 'SUPERCELL',
+          image: 'https://s3-ap-northeast-1.amazonaws.com/prework.fi/static/img/og_mainpage.png'
+        },
+        {
+          name_of_company: 'Fujitsu',
+          image: 'https://s3-ap-northeast-1.amazonaws.com/prework.fi/static/img/fujitsu.jpg'
         }
       ]
     }
