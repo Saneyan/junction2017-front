@@ -3,6 +3,10 @@
     <f7-navbar title="Quiz" sliding></f7-navbar>
     <f7-block>
       <p>{{question}}</p>
+      <img v-if="stage === 0" style="width:100%;" src="https://images.weserv.nl/?url=cdn.pbrd.co/images/GVqvkjE.jpg&w=700" />
+      <img v-if="stage === 1" style="width:100%;" src="https://images.weserv.nl/?url=cdn.pbrd.co/images/GVqylWj.jpg&w=700" />
+      <img v-if="stage === 2" style="width:100%;" src="https://images.weserv.nl/?url=cdn.pbrd.co/images/GVqxKdL.jpg&w=700" />
+      <img v-if="stage === 3" style="width:100%;" src="https://images.weserv.nl/?url=cdn.pbrd.co/images/GVqwMH4.jpg&w=700" />
     </f7-block>
     <f7-block>
       <f7-grid>
