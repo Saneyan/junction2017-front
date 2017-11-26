@@ -40,12 +40,16 @@
     <f7-login-screen id="login-screen">
       <f7-view>
         <f7-pages>
-          <f7-page login-screen>
-            <f7-login-screen-title><img class="login-logo" :src="logo" /></f7-login-screen-title>
-            <f7-block inner>
-              <f7-button fill round big @click="onLoginButtonClick">Login with Facebook</f7-button>
-            </f7-block>
-          </f7-page>
+          <div class="page">
+            <div login-screen class="login-screen page-content" style="background-color: #326a92">
+              <f7-login-screen-title>
+                <div style="background-color: #f5f5f5; margin-top: 40px;">
+                  <img class="login-logo" :src="logo" />
+                </div>
+              </f7-login-screen-title>
+              <f7-button style="line-height: 48px; width: 80%; margin: 40px auto 0 auto; color: #000; background-color: #f5f5f5" fill round big @click="onLoginButtonClick"><img src="https://s3-ap-northeast-1.amazonaws.com/prework.fi/static/img/fb.png" style="width:24px; margin-right: 12px; vertical-align: middle" />Login with Facebook</f7-button>
+            </div>
+          </div>
         </f7-pages>
       </f7-view>
     </f7-login-screen>
