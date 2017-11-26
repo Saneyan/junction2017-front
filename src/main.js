@@ -24,8 +24,6 @@ import Routes from './routes.js'
 // Import App Component
 import App from './app'
 
-import store from './store/store'
-
 import { init } from './utils/init'
 
 // Init F7 Vue Plugin
