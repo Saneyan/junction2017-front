@@ -8,7 +8,7 @@ export function session(state = initalState, action) {
   switch (action.type) {
     case GET_SESSION:
     case CREATE_SESSION:
-      return state;
+      return { token: action.payload.token };
 
     case DELETE_SESSION:
       return initalState;

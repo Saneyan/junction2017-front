@@ -24,7 +24,9 @@ import Routes from './routes.js'
 // Import App Component
 import App from './app'
 
-import store from './store'
+import store from './store/store'
+
+import { init } from './utils/init'
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
@@ -46,18 +48,4 @@ new Vue({
   }
 });
 
-// Before opening main view, check if a user has logged into the app.
-// If not, open login screen. Otherwise continue to initialize main view.
-if (localStorage.getItem('session') === null) {
-  window.f7.loginScreen();
-} else if (false) {
-  window.f7.mainView.router.load({
-    url: '/sign-up/user-type/'
-  });
-}
-
-window.Dom7(document).on('app:logout', function () {
-  localStorage.removeItem('session');
-  window.f7.closePanel();
-  window.f7.loginScreen();
-});
+init();

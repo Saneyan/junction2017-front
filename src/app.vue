@@ -42,23 +42,23 @@
             </f7-navbar>
             <!-- Page Content -->
 
-          <template v-if="job_seeker">
-            <f7-block v-if="!quiz_answered">
+          <template v-if="account.type === 'job_seeker'">
+            <f7-block v-if="!account.quiz_answered">
               <f7-button big fill @click="startQuiz">Start Quiz</f7-button>
             </f7-block>
-            <f7-block v-if="quiz_answered">
+            <f7-block v-if="account.quiz_answered">
               <f7-button big fill @click="seeMatchings">See matchings</f7-button>
             </f7-block>
           </template>
 
           <f7-list>
-            <f7-list-item v-if="job_seeker && quiz_answered" center link="/quiz/">
+            <f7-list-item v-if="account.type === 'job_seeker' && account.quiz_answered" center link="/quiz/">
               Retry quiz
             </f7-list-item>
-            <f7-list-item v-if="job_seeker" center link="/contact/company/">
+            <f7-list-item v-if="account.type === 'job_seeker'" center link="/contact/company/">
               Company contacts
             </f7-list-item>
-            <f7-list-item v-if="employer" center link="/contact/job-seeker/">
+            <f7-list-item v-if="account.type === 'employer'" center link="/contact/job-seeker/">
               Job Seeker contacts
             </f7-list-item>
           </f7-list>
@@ -86,12 +86,14 @@
 </template>
 
 <script>
+import store from './store/store'
+import { getUser, loginWithFacebook } from './api'
+import { deleteSession } from './actions'
+
 export default {
   data: function () {
     return {
-      job_seeker: true,
-      employer: false,
-      quiz_answered: false
+      account: this.$select('account')
     };
   },
 
@@ -105,12 +107,17 @@ export default {
     },
 
     logout: function () {
-      window.Dom7(document).trigger('app:logout');
+      store.dispatch(deleteSession());
+      window.f7.closePanel();
+      window.f7.loginScreen();
     },
 
     onLoginButtonClick: function () {
       window.f7.closeModal();
-      this.route('/sign-up/user-type/');
+      loginWithFacebook();
+      if (!getUser()) {
+        this.route('/sign-up/user-type/');
+      }
     },
 
     route: function (url) {

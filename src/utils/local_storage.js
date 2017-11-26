@@ -1,0 +1,1 @@
+export { getToken, saveToken, deleteToken } from '../mock/utils/local_storage'
