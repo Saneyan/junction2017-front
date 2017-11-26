@@ -8,10 +8,10 @@
     <!-- Left Panel -->
     <f7-panel left reveal layout="dark">
       <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true">
-        <f7-navbar v-if="$theme.ios" title="Live 'n Tokyo" sliding></f7-navbar>
+        <f7-navbar v-if="$theme.ios" title="Prework.fi" sliding></f7-navbar>
         <f7-pages>
           <f7-page>
-            <f7-navbar v-if="$theme.material" title="Live 'n Tokyo" sliding></f7-navbar>
+            <f7-navbar v-if="$theme.material" title="Prework.fi" sliding></f7-navbar>
             <f7-list>
               <f7-list-item @click="logout">Logout</f7-list-item>
             </f7-list>
@@ -41,7 +41,7 @@
       <f7-view>
         <f7-pages>
           <f7-page login-screen>
-            <f7-login-screen-title>Live 'n Tokyo</f7-login-screen-title>
+            <f7-login-screen-title><img class="login-logo" :src="logo" /></f7-login-screen-title>
             <f7-block inner>
               <f7-button fill round big @click="onLoginButtonClick">Login with Facebook</f7-button>
             </f7-block>
@@ -56,9 +56,22 @@
 <script>
 import store from './store/store'
 import { getUser, loginWithFacebook } from './api'
-import { deleteSession } from './actions'
+import { deleteSession, saveAccount } from './actions'
+import { init } from './utils/init'
 
 export default {
+  data: function () {
+    return {
+      logo: require('../preworkfi.png')
+    }
+  },
+
+  mounted: function () {
+    setTimeout(() => {
+      init();
+    }, 100);
+  },
+
   methods: {
     logout: function () {
       store.dispatch(deleteSession());
@@ -69,8 +82,12 @@ export default {
     onLoginButtonClick: function () {
       window.f7.closeModal();
       loginWithFacebook();
-      if (!getUser()) {
-        this.route('/sign-up/user-type/');
+      const user = getUser();
+      if (!user) {
+        window.f7.mainView.router.load({ url: '/sign-up/user-type/' });
+      } else {
+        store.dispatch(saveAccount(user));
+        window.f7.mainView.router.load({ url: '/dashboard/' });
       }
     },
   }
