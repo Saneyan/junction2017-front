@@ -12,7 +12,7 @@
         <f7-input name="job_track" type="text" placeholder="Job Track"></f7-input>
       </f7-list-item>
       <f7-list-item>
-        <f7-button fill round big @click="signUp">Send</f7-button>
+        <f7-button fill round big @click="signUp">Sign</f7-button>
       </f7-list-item>
     </f7-list>
   </f7-page>

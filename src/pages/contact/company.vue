@@ -4,7 +4,7 @@
     <f7-card v-for="contact in contacts">
       <f7-card-header>{{contact.name_of_company}}</f7-card-header>
       <f7-card-content>
-        <f7-button fill raised @click="goToContract">Send contract</f7-button>
+        <f7-button fill raised @click="goToContract">Sign contract</f7-button>
       </f7-card-content>
       <f7-card-footer>
         <f7-button @click="goToMessage">Message</f7-button>
