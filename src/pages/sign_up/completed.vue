@@ -12,7 +12,7 @@
 export default {
   methods: {
     close: function () {
-      this.$router.load({ pageName: 'main' });
+      this.$router.load({ url: '/dashboard/' });
     }
   }
 }

@@ -13,10 +13,9 @@ export function init() {
 
     if (accountData) {
       store.dispatch(saveAccount(accountData));
+      window.f7.mainView.router.load({ url: '/dashboard' });
     } else {
-      window.f7.mainView.router.load({
-        url: '/sign-up/user-type/'
-      });
+      window.f7.mainView.router.load({ url: '/sign-up/user-type/' });
     }
   }
 

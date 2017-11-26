@@ -25,7 +25,7 @@
 <script>
 export default {
   data: function() {
-    var initalStage = 1;
+    var initalStage = 0;
     this.nextQuiz(initalStage);
 
     return {
@@ -47,10 +47,13 @@ export default {
 
     nextQuiz: function (nextStage) {
       // Currently we have a mock of quiz data formatted in JSON.
-      this.$$.getJSON('http://127.0.0.1:8082/mock/quiz_' + nextStage + '.json', function (d) {
-        if (d.next) {
-          this.question = d.question;
-          this.options = d.options.map(function (o) { return o.content });
+      const apiPath = 'https://wt-948eb81550a069c57c30f80e975bd7b7-0.sandbox.auth0-extend.com/answer'
+      const option_id = null;
+      this.$$.post(apiPath, { option_id, question_id: nextStage }, function (d) {
+        const body = JSON.parse(d)
+        if (body.next) {
+          this.question = body.next.question_content;
+          this.options = body.next.options.map(function (o) { return o.option_content });
         } else {
           this.$router.load({
             url: '/quiz/completed/'
