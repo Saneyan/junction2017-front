@@ -10,7 +10,7 @@
         </ul>
       </f7-card-content>
       <f7-card-content>
-        <f7-button fill raised @click="goToContract">Send Offer</f7-button>
+        <f7-button fill raised>Send Offer</f7-button>
       </f7-card-content>
     </f7-card>
   </f7-page>
@@ -27,16 +27,6 @@ export default {
           image: require('../../../masashi.png')
         }
       ]
-    }
-  },
-
-  methods: {
-    goToContract: function () {
-      this.$router.load({ url: '/contract/' });
-    },
-
-    goToMessage: function () {
-      this.$router.load({ url: '/message/' });
     }
   }
 }
