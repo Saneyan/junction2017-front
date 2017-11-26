@@ -9,14 +9,13 @@
     </f7-navbar>
     <!-- Page Content -->
 
-    <template v-if="account.type === 'job_seeker'">
-      <f7-block v-if="!account.quiz_answered">
-        <f7-button big fill @click="startQuiz">Start Quiz</f7-button>
-      </f7-block>
-      <f7-block v-if="account.quiz_answered">
-        <f7-button big fill @click="seeMatchings">See matchings</f7-button>
-      </f7-block>
-    </template>
+    <f7-block v-if="!account.quiz_answered">
+      <f7-button big fill @click="startQuiz">Start Quiz</f7-button>
+    </f7-block>
+
+    <f7-block v-if="account.quiz_answered">
+      <f7-button big fill @click="seeMatchings">See matchings</f7-button>
+    </f7-block>
 
     <f7-list>
       <f7-list-item v-if="account.type === 'job_seeker' && account.quiz_answered" center link="/quiz/">

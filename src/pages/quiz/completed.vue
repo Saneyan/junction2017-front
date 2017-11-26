@@ -9,9 +9,12 @@
 </template>
 
 <script>
+import { markAsAnsweredQuiz } from '../../api'
+
 export default {
   methods: {
     close: function () {
+      markAsAnsweredQuiz();
       this.$router.load({ pageName: 'main' });
     }
   }
