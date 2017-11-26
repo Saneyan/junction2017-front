@@ -7,3 +7,11 @@ Your custom styles go here
   margin-bottom: 120px;
   width: 290px;
 }
+
+.company-cover {
+  height: 120px;
+}
+
+.company-cover img {
+  width: 100%;
+}
