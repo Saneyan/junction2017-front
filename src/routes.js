@@ -1,9 +1,5 @@
 export default [
   {
-      path: '/interview/',
-      component: require('./pages/interview.vue')
-  },
-  {
       path: '/message/',
       component: require('./pages/message.vue')
   },
@@ -40,7 +36,7 @@ export default [
       component: require('./pages/sign_up/completed.vue')
   },
   {
-      path: '/contact/job_seeker/',
+      path: '/contact/job-seeker/',
       component: require('./pages/contact/job_seeker.vue')
   },
   {
@@ -48,7 +44,12 @@ export default [
       component: require('./pages/contact/company.vue')
   },
   {
-      path: '/matchings/',
-      component: require('./pages/matchings.vue')
+      path: '/matching/company/',
+      component: require('./pages/matching/company.vue')
+  },
+  {
+      path: '/matching/job-seeker/',
+      component: require('./pages/matching/job_seeker.vue')
   }
+
 ]

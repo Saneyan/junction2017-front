@@ -13,8 +13,12 @@
       <f7-button big fill @click="startQuiz">Start Quiz</f7-button>
     </f7-block>
 
-    <f7-block v-if="account.quiz_answered">
-      <f7-button big fill @click="seeMatchings">See matchings</f7-button>
+    <f7-block v-if="account.type === 'job_seeker' && account.quiz_answered">
+      <f7-button big fill @click="seeCompanyMatchings">See matchings</f7-button>
+    </f7-block>
+
+    <f7-block v-if="account.type === 'employer' && account.quiz_answered">
+      <f7-button big fill @click="seeJobSeekerMatchings">See matchings</f7-button>
     </f7-block>
 
     <f7-list>
@@ -44,8 +48,12 @@ export default {
       this.$router.load({ url: '/quiz/' });
     },
 
-    seeMatchings: function () {
-      this.$router.load({ url: '/matchings/' });
+    seeJobSeekerMatchings: function () {
+      this.$router.load({ url: '/matching/job-seeker/' });
+    },
+
+    seeCompanyMatchings: function () {
+      this.$router.load({ url: '/matching/company/' });
     },
   },
 }

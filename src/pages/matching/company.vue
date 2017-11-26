@@ -4,7 +4,7 @@
     <f7-card v-for="matching in matchings">
       <f7-card-header class="company-cover"><img :src="matching.image" /></f7-card-header>
       <f7-card-footer>
-        <f7-button @click="goToInterview">Go to interview</f7-button>
+        <a @click="goToInterview">Go to interview</a>
       </f7-card-footer>
     </f7-card>
   </f7-page>
@@ -18,7 +18,7 @@ export default {
       matchings: [
         {
           name_of_company: 'Helsinki Hearth',
-          image: require('../../preworkfi.png')
+          image: require('../../../preworkfi.png')
         }
       ]
     }
@@ -26,9 +26,7 @@ export default {
 
   methods: {
     goToInterview: function () {
-      this.$router.load({
-        url: '/interview/'
-      });
+      window.open('https://www.recright.com/interview/public/fc2a7c7db5422979dfc1c0d54013e1929715', '_blank');
     }
   }
 }
